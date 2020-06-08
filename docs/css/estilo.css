@@ -1,0 +1,33 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#presentacion img {
+    width: 100%
+}
+
+.fab {
+    font-size: 2rem;
+}
+
+.estadisticas-grande {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.estadisticas-chico {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+i.fas {
+    color: white;
+    
+    background-color: grey;
+    font-size: 2rem;
+}
+
+.iconos {
+    
+}
