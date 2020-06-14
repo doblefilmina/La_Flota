@@ -387,7 +387,9 @@
   
     //OBTENGO EL CONTENIDO HTML EN JSON
     fetch("contenido.json")
-    .then(contenido => contenido.json() ) //toma el string en contenido.json y devuelvo un listado de objetos json
+    .then(contenido => {
+      console.log(contenido)
+      contenido.json() }) //toma el string en contenido.json y devuelvo un listado de objetos json
     .then(elementos => elementos.map( ({contenido, posicion, clases}) => new Elemento (contenido, posicion, clases) ) ) //colección de objetos de tipo Elementos.Elemento
     .then( elementos => { 
       elementos.forEach( elemento => {
