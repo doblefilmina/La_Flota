@@ -386,6 +386,7 @@
  //   }
   
     //OBTENGO EL CONTENIDO HTML EN JSON
+    /*
     debugger
     fetch("contenido.json")
     .then(contenido => {
@@ -397,14 +398,18 @@
         elemento.Maquetar()
       }) 
     })  
-
- /*   fetch("contenido.json").then(function(rta){
-       return(rta.json)
+*/
+    fetch("contenido.json").then(function(rta){
+       return rta.json()
+       console.log(rta.json)
     }).then (function(objetos){
-      return(objetos.map
+      objetos.forEach(function( {contenido, posicion, clases} ){
+        let objeto = new Elemento (contenido, posicion, clases)
+        objeto.Maquetar()
+      })
 
     })
-*/
+
 /*      Maquetar(elemento1, posicion1, clases1)
 
       let elemento2 = `
