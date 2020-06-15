@@ -1,0 +1,25 @@
+{
+  "name": "la_flota",
+  "version": "0.0.1",
+  "description": "plataforma de distribución digital de música",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doblefilmina/La_Flota.git"
+  },
+  "author": "doblefilmina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doblefilmina/La_Flota/issues"
+  },
+  "homepage": "https://github.com/doblefilmina/La_Flota#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
