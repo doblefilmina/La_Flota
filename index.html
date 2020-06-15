@@ -402,6 +402,18 @@
 
     fetch("contenido.json").then(function(rta){
        return rta.json()
+
+    }).then ( objetos => {
+      objetos.forEach( ( {contenido, posicion, clases} ) => {
+        let objeto = new Elemento (contenido, posicion, clases)
+        objeto.Maquetar()
+      })
+
+    })
+/*
+
+    fetch("contenido.json").then(function(rta){
+       return rta.json()
        console.log(rta.json)
     }).then (function(objetos){
       objetos.forEach(function( {contenido, posicion, clases} ){
@@ -410,7 +422,7 @@
       })
 
     })
-
+*/
 
 /*      Maquetar(elemento1, posicion1, clases1)
 
