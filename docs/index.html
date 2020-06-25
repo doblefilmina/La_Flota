@@ -42,16 +42,16 @@
             <i class='fab fa-facebook-f col-1'></i>
       </div>    
 -->
-<!--      <div class='row justify-content-end align-items-center'> 
-          <span id='estadisticas-albumes' class='col-3'>
+      <div class='row justify-content-end align-items-center'> 
+<!--          <span id='estadisticas-albumes' class='col-3'>
             <p class='estadisticas-grande text-center m-0 p-0'> 1.400 +</p>
             <p class='estadisticas-chico text-center p-0'> Albumes lanzados </p>
           </span>
-          <span id='estadisticas-canciones' class='col-3'>
+--> <!--          <span id='estadisticas-canciones' class='col-3'>
             <p class='estadisticas-grande text-center m-0 p-0'> 6.500 +</p>
             <p class='estadisticas-chico text-center p-0'> Canciones subidas </p>
           </span>
-          <span id='estadisticas-artistas' class='col-3'>
+--><!--          <span id='estadisticas-artistas' class='col-3'>
               <p class='estadisticas-grande text-center m-0 p-0'> 500 +</p>
               <p class='estadisticas-chico text-center p-0'> Artistas </p>
           </span>
@@ -369,9 +369,49 @@
     <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
     <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous'></script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' integrity='sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI' crossorigin='anonymous'></script>
-    <script src="elemento.class.js"></script>
-
+    <script defer src="elemento.class.js"></script>
+    <script defer src="script1.js"></script>
+    <script defer src="script2.js"></script>
+<!--
     <script>
+
+      let ubicacion = '#estadisticas-canciones'
+      const ficha = document.querySelector(ubicacion)
+      console.log(ficha)
+
+      const Esconder = function( ubicacion ) {
+        const ficha = document.querySelector(ubicacion)
+        ficha.classList.remove('d-block')
+        ficha.classList.add('d-none')
+      }
+
+      const Mostrar = function ( ubicacion ) {
+      
+      let ficha = document.querySelector(ubicacion)             
+        ficha.classList.remove('d-none')
+        ficha.classList.add('d-block')
+      } 
+      
+/*      const Animacion_contador = function (tiempo, intervalo, maximo, contenido, seccion) { 
+                              
+      setInterval(function() {
+                              
+                              Esconder( seccion )
+
+                              document.querySelector(seccion).innerHTML = contenido
+                              Mostrar( seccion )
+                              console.log(i)
+                              i = i + intervalo
+                              console.log(i)
+                              if (i > maximo) {
+                                clearInterval() 
+                              }
+                              
+        }, tiempo);
+      }
+  */    
+      
+
       //FUNCIÓN PARA CREAR HTML
 
   //    const Maquetar = function(elemento, posicion, clases) {
@@ -400,6 +440,7 @@
     })  
 */
 
+
     fetch("contenido.json").then(function(rta){
        return rta.json()
 
@@ -420,7 +461,7 @@
         let objeto = new Elemento (contenido, posicion, clases)
         objeto.Maquetar()
       })
-
+ 
     })
 */
 
@@ -440,7 +481,36 @@
       Maquetar(elemento2, posicion2, clases2)
 
 */
+ 
+      let j = 0
+      let seccion = '#estadisticas-canciones'  
+      let contenido = '<p class="estadisticas-grande text-center m-0 p-0"> ${j} +</p> <p class="estadisticas-chico text-center p-0"> Canciones subidas </p>'
+      let intervalo = 10
+      let tiempo = 200
+      let maximo = 6501
+      
+
+//      Animacion_contador(tie, int, max, cont, sec)
+
+const iteracion = setInterval(function() {
+                              
+                              Esconder( seccion )
+
+                              document.querySelector(seccion).innerHTML = `<p class="estadisticas-grande text-center m-0 p-0"> ${j} +</p> <p class="estadisticas-chico text-center p-0"> Canciones subidas </p>`
+                              Mostrar( seccion )
+            
+                              j = j + 1
+                            
+                              
+
+                              if (j == 40) {
+                                console.log(j)
+                                clearInterval(iteracion) 
+                              }
+                              
+        }, tiempo);
+ 
     </script>
-  
+ --> 
   </body>
 </html>
